@@ -24,10 +24,6 @@ export default function EditExpenseScreen({ route, navigation }) {
     navigation.goBack();
   }
 
-  const onImportantHandler = () => {
-    navigation.navigate("ImportantExpenses");
-  };
-
   // const onComfirmHandler = (expenseData) => {
   //   expensesCtx.addExpense(expenseData);
   //   navigation.goBack();
