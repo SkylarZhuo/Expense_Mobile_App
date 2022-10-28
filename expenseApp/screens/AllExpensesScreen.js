@@ -29,7 +29,6 @@ export default function AllExpensesScreen() {
     return unsubscribe;
   }, []);
 
-  console.log(expense);
 
   const expensesCtx = useContext(ExpensesContext);
 

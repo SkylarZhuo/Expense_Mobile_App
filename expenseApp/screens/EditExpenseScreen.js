@@ -56,7 +56,7 @@ export default function EditExpenseScreen({ route, navigation }) {
   //   navigation.goBack();
   // }
 
-  let importantLabel = isImportant ? '❤Already added to Important!' : '🤍Mark As Important'
+  let importantLabel = isImportant ? '❤Already added to Important!Remove it' : '🤍Mark As Important'
   
   return (
     <View style={styles.container}>

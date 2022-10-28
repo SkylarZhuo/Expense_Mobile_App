@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: GlobalStyles.colors.LightBlue,
     flexDirection: "row",
-    height: 70,
+    height: 80,
   },
   textContainer: {
     flex: 10,

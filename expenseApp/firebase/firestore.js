@@ -6,7 +6,6 @@ import {firestore} from "./firebase_setup";
 
 
 export const writeToDb = async(data)=>{
-    console.log(data)
     try{
         await addDoc(collection(firestore,"Expense"),data);
     }catch(err){
