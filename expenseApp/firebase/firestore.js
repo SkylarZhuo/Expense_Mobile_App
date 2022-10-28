@@ -2,9 +2,6 @@ import { async } from "@firebase/util"
 import {collection, addDoc,doc,deleteDoc,updateDoc} from "firebase/firestore"
 import {firestore} from "./firebase_setup";
 
-
-
-
 export const writeToDb = async(data)=>{
     try{
         await addDoc(collection(firestore,"Expense"),data);

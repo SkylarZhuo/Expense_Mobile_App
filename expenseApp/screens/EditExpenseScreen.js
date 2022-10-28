@@ -46,7 +46,32 @@ export default function EditExpenseScreen({ route, navigation }) {
     navigation.goBack();
   }
 
+  let alert1 = isImportant ? "Remove from important list" : "Mark As important";
+  let alert2 = isImportant
+    ? "Are you sure to remove from the important list?"
+    : "Are you sure to add a important expense?";
   function onAddImportantHandler() {
+    isImportant
+      ? Alert.alert(
+          "Remove from important list",
+          "Are you sure to remove from the important list?",
+          [
+            { text: "No", style: "cancel", onPress: () => {} },
+            { text: "Yes", style: "destructive", onPress: onImportant },
+          ]
+        )
+      : Alert.alert(
+          "Mark As important",
+          "Are you sure to add to a important expense?",
+          [
+            { text: "No", style: "cancel", onPress: () => {} },
+            { text: "Yes", style: "destructive", onPress: onImportant },
+          ]
+        );
+    return;
+  }
+
+  function onImportant() {
     updateToDb(expenseId, !isImportant);
     navigation.navigate("ImportantExpenses");
   }
@@ -56,8 +81,10 @@ export default function EditExpenseScreen({ route, navigation }) {
   //   navigation.goBack();
   // }
 
-  let importantLabel = isImportant ? '❤Already added to Important!Remove it' : '🤍Mark As Important'
-  
+  let importantLabel = isImportant
+    ? "❤Already added to Important!Remove it"
+    : "🤍Mark As Important";
+
   return (
     <View style={styles.container}>
       <View>
@@ -74,13 +101,6 @@ export default function EditExpenseScreen({ route, navigation }) {
           style={styles.button}
         />
       </View>
-
-      {/* <AddButton
-        icon="trash"
-        color={GlobalStyles.colors.DarkGray1}
-        size={38}
-        onPress={onComfirmHandler}
-      /> */}
     </View>
   );
 }
