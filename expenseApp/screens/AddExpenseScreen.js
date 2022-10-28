@@ -35,7 +35,6 @@ export default function AddExpenseScreen({ route, navigation }) {
   // }
   return (
     <View>
-      <Text>AddExpenseScreen</Text>
       <AddExpenseForm onCancel={cancelHandler} onSubmit={onAddHandler}/>
       {/* <Button title="add" onPress={onComfirmHandler}>
         Test for adding!

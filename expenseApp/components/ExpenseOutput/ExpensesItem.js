@@ -14,19 +14,6 @@ export default function ExpensesItem({ item }) {
     });
   };
 
-  // export default function ExpensesItem({expense}) {
-  //     const navigation = useNavigation();
-  //     const onPressHandler = ()=>{
-  //         navigation.navigate('EditExpenseScreen',{
-  //             expenseId: expense.key,
-  //             description: expense.description,
-  //             amount:expense.amount,
-  //             isImportant: expense.isImportant
-  //         })
-  //   }
-
-  console.log(item.key)
-  console.log(item.isImportant);
   return (
     <Pressable
       onPress={onPressHandler}

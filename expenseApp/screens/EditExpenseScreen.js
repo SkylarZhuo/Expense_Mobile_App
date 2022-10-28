@@ -14,7 +14,6 @@ export default function EditExpenseScreen({ route, navigation }) {
   const expensesCtx = useContext(ExpensesContext);
 
   async function onDeleteHandler(deletedKey) {
-    console.log("delete pressed ", deletedKey);
     // setGoals(
     //   goals.filter((goal) => {
     //     return goal.key != deletedKey;
@@ -57,11 +56,13 @@ export default function EditExpenseScreen({ route, navigation }) {
   //   navigation.goBack();
   // }
 
+  let importantLabel = isImportant ? '❤Already added to Important!' : '🤍Mark As Important'
+  
   return (
     <View style={styles.container}>
       <View>
         <EditButton
-          content={"Mark As Important"}
+          content={importantLabel}
           onPress={onAddImportantHandler}
           style={styles.button}
         />

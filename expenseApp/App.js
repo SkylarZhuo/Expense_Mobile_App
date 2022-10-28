@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View,TouchableWithoutFeedback,Keyboard } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -12,6 +12,7 @@ import AddButton from "./components/UI/AddButton";
 import AddExpenseScreen from "./screens/AddExpenseScreen";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ExpensesContextProvider from "./stores/expenses_context";
+import React from 'react';
 // import AddExpenseScreen from "./screens/AddExpenseScreen"
 
 const Stack = createNativeStackNavigator();

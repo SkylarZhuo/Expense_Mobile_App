@@ -4,6 +4,8 @@ import AddInput from "./AddInput";
 import { GlobalStyles } from "../../constants/color";
 import { useState } from "react";
 import { Button } from "react-native";
+import AddButton from "../UI/AddButton";
+import PrimaryButton from "../UI/PrimaryButton";
 export default function AddExpenseForm({ onCancel, onSubmit }) {
   const [inputs, setInputs] = useState({
     amount: { value: "", isValid: true },
@@ -24,7 +26,7 @@ export default function AddExpenseForm({ onCancel, onSubmit }) {
     const expenseData = {
       amount: +inputs.amount.value,
       description: inputs.description.value,
-      isImportant:false
+      isImportant: false,
     };
 
     const amountIsValid = !isNaN(expenseData.amount) && expenseData.amount > 0;
@@ -32,15 +34,15 @@ export default function AddExpenseForm({ onCancel, onSubmit }) {
 
     if (!amountIsValid || !descriptionIsValid) {
       Alert.alert("Invalid input", "Please check your input!");
-      // setInputs((curInputs) => {
-      //   return {
-      //     amount: { value: curInputs.amount.value, isValid: amountIsValid },
-      //     description: {
-      //       value: curInputs.description.value,
-      //       isValid: descriptionIsValid,
-      //     },
-      //   };
-      // });
+      setInputs((curInputs) => {
+        return {
+          amount: { value: curInputs.amount.value, isValid: amountIsValid },
+          description: {
+            value: curInputs.description.value,
+            isValid: descriptionIsValid,
+          },
+        };
+      });
       return;
     }
     onSubmit(expenseData);
@@ -58,7 +60,7 @@ export default function AddExpenseForm({ onCancel, onSubmit }) {
           textInoutConfig={{
             keyboardType: "decimal-pad",
             onChangeText: addExpenseHandler.bind(this, "amount"),
-            value: false
+            value: false,
           }}
           invalid={!inputs.amount.isValid}
         />
@@ -66,22 +68,23 @@ export default function AddExpenseForm({ onCancel, onSubmit }) {
           labelName="Description"
           textInoutConfig={{
             multiline: true,
-            //autoCapitalize:
             onChangeText: addExpenseHandler.bind(this, "description"),
             value: inputs.description.value,
           }}
           invalid={!inputs.description.isValid}
         />
         {!formIsInvalid && (
-          <Text style={styles.errorMessage}>Invalid input values - please check your entered data!</Text>
+          <Text style={styles.errorMessage}>
+            Invalid input values - please check your entered data!
+          </Text>
         )}
-        <View style={styles.buttons}>
-          <Button title="Cancel" style={styles.button} onPress={onCancel}>
-            Cancel
-          </Button>
-          <Button title="Submit" style={styles.button} onPress={submitHandler}>
-            Submit
-          </Button>
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <PrimaryButton content={"Cancel"} onPress={onCancel} />
+          </View>
+          <View style={styles.button}>
+            <PrimaryButton content={"Submit"} onPress={submitHandler} />
+          </View>
         </View>
       </View>
     </View>
@@ -97,9 +100,8 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: 30,
+    marginBottom: 20,
   },
-
   inputContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -107,5 +109,13 @@ const styles = StyleSheet.create({
   errorMessage: {
     textAlign: "center",
     color: GlobalStyles.colors.AttentionColor,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    marginHorizontal:5
   },
 });

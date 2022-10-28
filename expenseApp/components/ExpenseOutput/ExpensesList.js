@@ -1,6 +1,5 @@
-import { View, Text, FlatList } from "react-native";
+import { FlatList } from "react-native";
 import React from "react";
-import { GlobalStyles } from "../../constants/color";
 import ExpensesItem from "./ExpensesItem";
 
 // function renderExpenseItem(item) {

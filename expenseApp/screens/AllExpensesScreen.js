@@ -30,7 +30,7 @@ export default function AllExpensesScreen() {
   }, []);
 
   console.log(expense);
-  
+
   const expensesCtx = useContext(ExpensesContext);
 
   const onComfirmHandler = () => {
@@ -40,11 +40,7 @@ export default function AllExpensesScreen() {
 
 
   return (
-    // <ExpensesOutput
-    //   expenses={expensesCtx.expenses}
-    //   expensesPeriod="Total"
-    //   fallbackText="No expense found!!"
-    // />
+
     <ExpensesOutput
     expenses={expense}
     expensesPeriod="Total"

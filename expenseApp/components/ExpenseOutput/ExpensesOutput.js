@@ -1,6 +1,5 @@
 import { View, StyleSheet, Text } from "react-native";
 import React from "react";
-import ExpensesSummary from "./ExpensesSummary";
 import ExpensesList from "./ExpensesList";
 
 import { GlobalStyles } from "../../constants/color";
@@ -8,7 +7,6 @@ import { GlobalStyles } from "../../constants/color";
 
 export default function ExpensesOutput({
   expenses,
-  expensesPeriod,
   fallbackText,
 }) {
   let content = <Text style={styles.infoText}>{fallbackText}</Text>;
