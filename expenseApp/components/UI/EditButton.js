@@ -4,6 +4,9 @@ import { GlobalStyles } from "../../constants/color";
 import AddButton from "./AddButton";
 
 export default function EditButton({ content, onPress, mode, style }) {
+  function deletePressed() {
+    onDelete(goal.key);
+  }
   return (
     <Pressable
       onPress={onPress}

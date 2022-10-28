@@ -6,46 +6,55 @@ const DUMMY_EXPENSES = [
     id: 'e1',
     description: 'A pair of shoes',
     amount: 59.99,
+    isImportant: false
   },
   {
     id: 'e2',
     description: 'A pair of trousers',
     amount: 89.29,
+    isImportant: false
   },
   {
     id: 'e3',
     description: 'Some bananas',
     amount: 5.99,
+    isImportant: false
   },
   {
     id: 'e4',
     description: 'A book',
     amount: 14.99,
+    isImportant: false
   },
   {
     id: 'e5',
     description: 'Another book',
     amount: 18.59,
+    isImportant: false
   },
   {
     id: 'e6',
     description: 'A pair of trousers',
     amount: 89.29,
+    isImportant: false
   },
   {
     id: 'e7',
     description: 'Some bananas',
     amount: 5.99,
+    isImportant: false
   },
   {
     id: 'e8',
     description: 'A book',
     amount: 14.99,
+    isImportant: true
   },
   {
     id: 'e9',
     description: 'Another book',
     amount: 18.59,
+    isImportant: true
   },
 ];
 

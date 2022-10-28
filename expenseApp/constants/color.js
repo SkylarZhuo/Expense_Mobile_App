@@ -10,6 +10,8 @@ export const GlobalStyles={
         LightGray1:"#B2B2B2",
         DarkGray1:"#3C4048",
         primaryDark: '#2C3333',
+        AttentionColor:"#E0144C",
+        AttentionColorLight:"#F8C4B4",
 
     }
 }
