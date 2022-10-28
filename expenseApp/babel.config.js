@@ -5,23 +5,23 @@
 //   };
 // };
 
-// module.exports = function(api) {
+module.exports = function(api) {
 
-//   api.cache(true);
+  api.cache(true);
   
-//   return {
+  return {
   
-//     "presets": ['babel-preset-expo'],
+    "presets": ['babel-preset-expo'],
   
-//     "plugins": [
+    "plugins": [
   
-//        ["module:react-native-dotenv"]
+       ["module:react-native-dotenv"]
   
-//      ]
+     ]
   
-//    };
-//   rr
-//   };
+   };
+  rr
+  };
 
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
