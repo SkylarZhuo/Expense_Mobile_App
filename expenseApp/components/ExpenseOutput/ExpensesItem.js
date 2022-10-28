@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   container: {
     padding: 12,
     margin: 12,
-    backgroundColor: GlobalStyles.colors.LightBlue,
+    backgroundColor: GlobalStyles.colors.backgroundColor5,
+
     flexDirection: "row",
     justifyContent: "space-between",
     borderRadius: 6,
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
   },
   textContainer: {
-    color: GlobalStyles.colors.LightColor20,
+    color:'white'
   },
   descriptionContainer: {
     fontSize: 16,

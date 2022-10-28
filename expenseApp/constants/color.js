@@ -12,6 +12,12 @@ export const GlobalStyles={
         primaryDark: '#2C3333',
         AttentionColor:"#E0144C",
         AttentionColorLight:"#F8C4B4",
+        backgroundColor:"#FAD6A5",
+        backgroundColor1:"#377D71",
+        backgroundColor2:"#FBC5C5",
+        backgroundColor3:"#FBA1A1",
+        backgroundColor4:"#8879B0",
+        backgroundColor5:"#3E6D9C"
 
     }
 }
