@@ -6,8 +6,6 @@ import PrimaryButton from "../components/UI/PrimaryButton";
 import { writeToDb } from "../firebase/firestore";
 
 export default function AddExpenseScreen({ route, navigation }) {
-  // const editedExpenseId = route.params?.expenseId;
-  // const expensesCtx = useContext(ExpensesContext);
   const cancelHandler = () =>{
     navigation.goBack();
   }

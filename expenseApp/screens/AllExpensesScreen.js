@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import React, { useContext } from "react";
 import ExpensesOutput from "../components/ExpenseOutput/ExpensesOutput";
-import { ExpensesContext } from "../stores/expenses_context";
 import { useState } from "react";
 import { useEffect } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
@@ -31,12 +30,6 @@ export default function AllExpensesScreen() {
     return unsubscribe;
   }, []);
 
-  // const expensesCtx = useContext(ExpensesContext);
-
-  // const onComfirmHandler = () => {
-  //   expensesCtx.addExpense({ description: "TextTextTest!!!", amount: 1999 });
-  //   navigation.goBack();
-  // };
 
   return (
     <View>

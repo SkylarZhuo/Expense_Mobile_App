@@ -14,20 +14,9 @@ export default function EditExpenseScreen({ route, navigation }) {
   const expensesCtx = useContext(ExpensesContext);
 
   async function onDeleteHandler(deletedKey) {
-    // setGoals(
-    //   goals.filter((goal) => {
-    //     return goal.key != deletedKey;
-    //   })
-    // );
-    // await deleteFromDb(editedExpenseId);
     expensesCtx.deleteExpense(editedExpenseId);
     navigation.goBack();
   }
-
-  // const onComfirmHandler = (expenseData) => {
-  //   expensesCtx.addExpense(expenseData);
-  //   navigation.goBack();
-  // };
 
   function onDeleteHandler() {
     Alert.alert("Delete this expense", "Are you sure to delete this expense?", [
@@ -41,11 +30,6 @@ export default function EditExpenseScreen({ route, navigation }) {
     deleteFromDb(expenseId);
     navigation.goBack();
   }
-
-  let alert1 = isImportant ? "Remove from important list" : "Mark As important";
-  let alert2 = isImportant
-    ? "Are you sure to remove from the important list?"
-    : "Are you sure to add a important expense?";
   function onAddImportantHandler() {
     isImportant
       ? Alert.alert(

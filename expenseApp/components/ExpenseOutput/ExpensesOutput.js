@@ -15,7 +15,6 @@ export default function ExpensesOutput({
   }
   return (
     <View styles={styles.container}>
-      {/* <ExpensesSummary expenses={expenses} periodName={expensesPeriod} /> */}
       {content}
     </View>
   );

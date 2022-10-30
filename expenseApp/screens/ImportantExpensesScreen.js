@@ -1,7 +1,6 @@
 import { View, Text } from "react-native";
 import React, { useContext } from "react";
 import ExpensesOutput from "../components/ExpenseOutput/ExpensesOutput";
-import { ExpensesContext } from "../stores/expenses_context";
 import { useState } from "react";
 import { useEffect } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
@@ -32,12 +31,7 @@ export default function ImportantExpensesScreen() {
   const importantExpenses = expense.filter((exp) => {
     return exp.isImportant;
   });
-  // const expensesCtx = useContext(ExpensesContext);
 
-  // const importantExpenses = expensesCtx.expenses.filter((expense)=>{
-  //   return expense.isImportant;
-
-  // })
   return (
     <View>
       <GrandientColor />

@@ -3,8 +3,6 @@ import React from "react";
 import AddInput from "./AddInput";
 import { GlobalStyles } from "../../constants/color";
 import { useState } from "react";
-import { Button } from "react-native";
-import AddButton from "../UI/AddButton";
 import PrimaryButton from "../UI/PrimaryButton";
 export default function AddExpenseForm({ onCancel, onSubmit }) {
   const [inputs, setInputs] = useState({
