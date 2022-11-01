@@ -56,10 +56,6 @@ export default function EditExpenseScreen({ route, navigation }) {
     navigation.navigate("ImportantExpenses");
   }
 
-  // async function onDelete1() {
-  //   await deleteFromDb(expenseId);
-  //   navigation.goBack();
-  // }
 
   let importantLabel = isImportant
     ? "❤Already added to Important!Remove it"

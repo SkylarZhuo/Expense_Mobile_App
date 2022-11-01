@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
   },
   textContainer: {
-    color:'white'
+    color: "white",
   },
   descriptionContainer: {
     fontSize: 16,

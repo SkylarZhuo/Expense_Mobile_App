@@ -1,54 +1,15 @@
-// module.exports = function(api) {
-//   api.cache(true);
-//   return {
-//     presets: ['babel-preset-expo'],
-//   };
-// };
-
-module.exports = function(api) {
-
-  api.cache(true);
-  
-  return {
-  
-    "presets": ['babel-preset-expo'],
-  
-    "plugins": [
-  
-       ["module:react-native-dotenv"]
-  
-     ]
-  
-   };
-  rr
-  };
-
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
-  "plugins": [
+  plugins: [
     ["module:react-native-dotenv", {
-      "moduleName": "@env",
+      "envName": "APP_ENV",
+      "moduleName": "react-native-dotenv",
       "path": ".env",
-      "blacklist": null,
-      "whitelist": null,
-      "safe": true,
-      "allowUndefined": true
+      "safe": false,
+      "allowUndefined": true,
+      "verbose": false
     }]
   ]
 };
 
 
-// module.exports = function(api) {
-//   api.cache(true);
-//   return {
-//     presets: ['babel-preset-expo'],
-//     plugins: [
-//       [
-//         'module:react-native-dotenv',{
-//           "moduleName": "@env",
-//           "path": ".env",
-//         }
-//       ]
-//     ]
-//   };
-// };
