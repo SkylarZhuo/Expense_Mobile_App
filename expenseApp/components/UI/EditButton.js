@@ -3,7 +3,7 @@ import React from "react";
 import { GlobalStyles } from "../../constants/color";
 import AddButton from "./AddButton";
 
-export default function EditButton({ content, onPress, mode, style }) {
+export default function EditButton({ content, onPress, mode}) {
   function deletePressed() {
     onDelete(goal.key);
   }
