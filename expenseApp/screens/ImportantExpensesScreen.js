@@ -1,0 +1,45 @@
+import { View, Text } from "react-native";
+import React, { useContext } from "react";
+import ExpensesOutput from "../components/ExpenseOutput/ExpensesOutput";
+import { useState } from "react";
+import { useEffect } from "react";
+import { collection, onSnapshot } from "firebase/firestore";
+import { firestore } from "../firebase/firebase_setup";
+import GrandientColor from "../components/UI/GradientColor";
+export default function ImportantExpensesScreen() {
+  const [expense, setExpense] = useState([]);
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      collection(firestore, "Expense"),
+      (querySnapshot) => {
+        if (querySnapshot.empty) {
+          setExpense([]);
+          return;
+        }
+        setExpense(
+          querySnapshot.docs.map((snapDoc) => {
+            let data = snapDoc.data();
+            data = { ...data, key: snapDoc.id };
+            return data;
+          })
+        );
+      }
+    );
+    return unsubscribe;
+  }, []);
+
+  const importantExpenses = expense.filter((exp) => {
+    return exp.isImportant;
+  });
+
+  return (
+    <View>
+      <GrandientColor />
+      <ExpensesOutput
+        expenses={importantExpenses}
+        expensesPeriod="Important expense"
+        fallbackText="No important expense added!"
+      />
+    </View>
+  );
+}
